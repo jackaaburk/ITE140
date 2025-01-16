@@ -13,8 +13,8 @@ import pandas as pd
 password = os.getenv("PGPASSWORD")
 
 # Build the SQLAlchemy connection string
-db_name = "seinfeld_foods"
-user = "cjones"
+db_name = "Celtics25"
+user = "jburkholder"
 host = "dbserver.gctaa.net"
 port = "5432"
 
