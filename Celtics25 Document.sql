@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS Celtics25.Accolades CASCADE;
 DROP TABLE IF EXISTS Celtics25.FormerTeams CASCADE; 
 DROP TABLE IF EXISTS Celtics25.Teams CASCADE;
 DROP TABLE IF EXISTS Celtics25.Players CASCADE; 
+DROP VIEW IF EXISTS PlayerFormerTeams;
+
 
 CREATE TABLE Celtics25.Players (  
     PlayerID SERIAL PRIMARY KEY,  
@@ -138,4 +140,17 @@ INSERT INTO Celtics25.FormerTeams (PlayerID, TeamID, YearJoined) VALUES
 ((SELECT PlayerID FROM Celtics25.Players WHERE FirstName = 'Kristaps'), (SELECT TeamID FROM Celtics25.Teams WHERE TeamName = 'New York Knicks'), 2015),  
 ((SELECT PlayerID FROM Celtics25.Players WHERE FirstName = 'Kristaps'), (SELECT TeamID FROM Celtics25.Teams WHERE TeamName = 'Dallas Mavericks'), 2019),  
 ((SELECT PlayerID FROM Celtics25.Players WHERE FirstName = 'Kristaps'), (SELECT TeamID FROM Celtics25.Teams WHERE TeamName = 'Washington Wizards'), 2021),  
-((SELECT PlayerID FROM Celtics25.Players WHERE FirstName = 'Kristaps'), (SELECT TeamID FROM Celtics25.Teams WHERE TeamName = 'Boston Celtics'), 2023);
+((SELECT PlayerID FROM Celtics25.Players WHERE FirstName = 'Kristaps'), (SELECT TeamID FROM Celtics25.Teams WHERE TeamName = 'Boston Celtics'), 2023); 
+
+
+CREATE VIEW PlayerFormerTeams AS SELECT   
+    P.FirstName,  
+    P.LastName,  
+    T.TeamName,  
+    FT.YearJoined  
+FROM   
+    Celtics25.FormerTeams FT  
+JOIN   
+    Celtics25.Players P ON FT.PlayerID = P.PlayerID  
+JOIN   
+    Celtics25.Teams T ON FT.TeamID = T.TeamID;
