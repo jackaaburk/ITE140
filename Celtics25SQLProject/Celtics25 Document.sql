@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Celtics25.FormerTeams CASCADE;
 DROP TABLE IF EXISTS Celtics25.Teams CASCADE;
 DROP TABLE IF EXISTS Celtics25.Players CASCADE; 
 DROP VIEW IF EXISTS PlayerFormerTeams;
+DROP VIEW IF EXISTs PlayerContracts;
 
 
 CREATE TABLE Celtics25.Players (  
@@ -154,3 +155,13 @@ JOIN
     Celtics25.Players P ON FT.PlayerID = P.PlayerID  
 JOIN   
     Celtics25.Teams T ON FT.TeamID = T.TeamID;
+
+CREATE VIEW PlayerContracts AS SELECT
+    P.FirstName,
+    P.LastName,
+    C.ContractSalary,
+    C.ContractYears
+FROM
+    Celtics25.Contracts C
+JOIN
+    Celtics25.Players P ON C.PlayerID = P.PlayerID;
