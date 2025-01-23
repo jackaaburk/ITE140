@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Celtics25.FormerTeams CASCADE;
 DROP TABLE IF EXISTS Celtics25.Teams CASCADE;
 DROP TABLE IF EXISTS Celtics25.Players CASCADE; 
 DROP VIEW IF EXISTS PlayerFormerTeams;
-DROP VIEW IF EXISTs PlayerContracts;
+DROP VIEW IF EXISTS PlayerContracts;
 
 
 CREATE TABLE Celtics25.Players (  
