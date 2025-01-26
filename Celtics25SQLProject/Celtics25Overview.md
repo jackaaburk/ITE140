@@ -1,5 +1,11 @@
 # Celtics25 Database Project Overview
+- In our ITE140 Final Project, we were supposed to:
+- Create a database with certain requirements.
+- We created our database in a PostGreSQL server.
+- The goal of the project was to create a presentable SQL database that would connect to an Excel file to be easily viewed.
+
 > In my project, I created a database for the starting five Boston Celtics players for the 2024-25 season. I had a table containing the players, and then varying tables containing information about each player.
+
 ## Step 1: ER Diagram Creation
 - In this project, I was required to:
 - Have at least 5 tables 
