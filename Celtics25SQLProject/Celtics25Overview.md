@@ -23,4 +23,4 @@
 ## Step 4: Finalize Excel Data
 - Finally, we made a PivotTable and PivotChart on Excel.
 - The table and chart can be used to look at the data more efficiently and to see data in different ways, quickly.
-[Celtics25ExcelFile](PivotChartandTableForCeltics25.xlsx)
+[Celtics25ExcelFile](output.xlsx)
